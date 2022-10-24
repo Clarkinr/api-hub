@@ -8,7 +8,13 @@ class Profile(models.Model):
     created_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=60, blank=False)
-    content = models.TextField(blank=False)
+    wheel_size = models.TextField(blank=True)
+    frame_type = models.TextField(blank=True)
+    brake_type = models.TextField(blank=True)
+    mallet_length = models.TextField(blank=True)
+    play_style = models.TextField(blank=True)
+    usual_location = models.TextField(blank=True)
+    team = models.TextField(blank=True)
     Images = models.ImageField(
         upload_to='images/', default='../Blank-Avatar_gg37ls.png'
     )
