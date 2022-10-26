@@ -7,6 +7,7 @@ class Post(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     created_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)
+    title = models.CharField(max_length=150)
     content = models.CharField(max_length=500)
     Images = models.ImageField(
         upload_to='images/', default='../polo-default_wsqwtv', blank=True
