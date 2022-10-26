@@ -9,7 +9,7 @@ class Post(models.Model):
     updated_time = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=150)
     content = models.CharField(max_length=500)
-    Images = models.ImageField(
+    image = models.ImageField(
         upload_to='images/', default='../polo-default_wsqwtv', blank=True
     )
 

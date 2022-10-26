@@ -15,7 +15,7 @@ class Profile(models.Model):
     play_style = models.TextField(blank=True)
     usual_location = models.TextField(blank=True)
     team = models.TextField(blank=True)
-    Images = models.ImageField(
+    image = models.ImageField(
         upload_to='images/', default='../Blank-Avatar_gg37ls.png'
     )
 
