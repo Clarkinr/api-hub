@@ -32,7 +32,7 @@ class ClubList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
-class ClubDetail(generics.RetrieveUpdateAPIView):
+class ClubDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Club.objects.all()
     serializer_class = ClubSerializer
