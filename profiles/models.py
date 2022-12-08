@@ -16,7 +16,7 @@ class Profile(models.Model):
     usual_location = models.TextField(blank=True)
     team = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../Blank-Avatar_gg37ls.png'
+        upload_to='images/', default='../blank_avatar_n8ebz9'
     )
 
     class Meta:
