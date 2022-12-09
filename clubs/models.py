@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 
 
@@ -19,11 +18,3 @@ class Club(models.Model):
 
     def __str__(self):
         return f'{self.id} {self.name}'
-
-
-def create_club(sender, instance, created, **kwargs):
-    if created:
-        Club.objects.create(owner=instance)
-
-
-post_save.connect(create_club, sender=User)
