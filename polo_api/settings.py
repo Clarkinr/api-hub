@@ -74,7 +74,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
     extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
     CORS_ALLOWED_ORIGIN_REGEXES = [
         rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-        "https://3000-clarkinr-polo-3v84tswjgvf.ws-eu78.gitpod.io/",
+        "https://3000-clarkinr-polo-3v84tswjgvf.ws-eu89.gitpod.io/",
     ]
 
 CORS_ALLOW_CREDENTIALS = True
