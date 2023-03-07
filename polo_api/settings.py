@@ -38,7 +38,7 @@ REST_FRAMEWORK = {
 }
 if 'DEV' not in os.environ:
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
-        'rest_framework.renders.JSONRenderer',
+        'rest_framework.renderers.JSONRenderer',
     ]
 
 REST_USE_JWT = True
