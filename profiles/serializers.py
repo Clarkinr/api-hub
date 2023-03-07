@@ -30,5 +30,6 @@ class ProfileSerializer(serializers.ModelSerializer):
             'id', 'owner', 'created_time', 'updated_time', 'name',
             'wheel_size', 'frame_type', 'brake_type', 'mallet_length',
             'play_style', 'usual_location', 'team', 'image', 'is_owner',
-            'following_id', 'posts_count', 'followers_count', 'following_count',
+            'following_id', 'posts_count', 'followers_count',
+            'following_count',
         ]
