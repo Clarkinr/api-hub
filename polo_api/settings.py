@@ -60,22 +60,18 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = [
-    os.environ.get('ALLOWED_HOSTS'),
-    'localhost',
-    ]
+ALLOWED_HOSTS = ['localhost', 'polo-hub-api.herokuapp.com']
+
 
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN')
     ]
 
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-        "https://3000-clarkinr-polo-3v84tswjgvf.ws-eu89.gitpod.io/",
-    ]
+        r"^https://.*\.gitpod\.io$",
+     ]
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -99,6 +95,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    'corsheaders',
 
     'profiles',
     'posts',
